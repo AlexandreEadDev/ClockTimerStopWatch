@@ -3,7 +3,6 @@ import alarm from "../assets/alarm.mp3";
 import { Link } from "react-router-dom";
 
 const Alarm = () => {
-  const [loading, setLoading] = useState(true);
   const [alarmTime, setAlarmTime] = useState("");
   const [isAlarmSet, setIsAlarmSet] = useState(false);
   const [ringtone, setRingtone] = useState(new Audio(alarm));
@@ -13,14 +12,15 @@ const Alarm = () => {
   const [selectedMinute, setSelectedMinute] = useState("00");
   const [hours, setHours] = useState("");
   const [minutes, setMinutes] = useState("");
+  const [seconds, setSeconds] = useState("");
   const [hrDotRotation, setHrDotRotation] = useState(0);
   const [minDotRotation, setMinDotRotation] = useState(0);
+  const [secDotRotation, setSecDotRotation] = useState(0);
 
   useEffect(() => {
     setHoursOptions(generateOptions(24));
     setMinutesOptions(generateOptions(60));
   }, []);
-
   const generateOptions = (count) => {
     const options = [];
     for (let i = 0; i < count; i++) {
@@ -33,7 +33,6 @@ const Alarm = () => {
     }
     return options;
   };
-
   const setAlarm = () => {
     if (isAlarmSet) {
       setAlarmTime("");
@@ -45,23 +44,24 @@ const Alarm = () => {
       setAlarmTime(time);
     }
   };
-
   useEffect(() => {
     const interval = setInterval(() => {
       const now = new Date();
       const h = now.getHours();
       const m = now.getMinutes();
+      const s = now.getSeconds();
 
       setHours(h < 10 ? "0" + h : h);
       setMinutes(m < 10 ? "0" + m : m);
-      setHrDotRotation(h * 30);
+      setSeconds(s < 10 ? "0" + s : s);
+      setHrDotRotation(h * 15);
       setMinDotRotation(m * 6);
+      setSecDotRotation(s * 6);
       setLoading(false);
     }, 500);
 
     return () => clearInterval(interval);
   }, []);
-
   useEffect(() => {
     const interval = setInterval(() => {
       const formattedHours = `${hours}:${minutes}`;
@@ -76,8 +76,6 @@ const Alarm = () => {
       clearInterval(interval);
     };
   }, [alarmTime, hours, minutes]);
-
-  console.log(isAlarmSet);
 
   return (
     <div>
@@ -151,7 +149,7 @@ const Alarm = () => {
                 cx="70"
                 cy="70"
                 r="70"
-                style={{ strokeDashoffset: 440 - (440 * hours) / 12 }}
+                style={{ strokeDashoffset: 440 - (440 * hours) / 24 }}
               ></circle>
             </svg>
             <div className="absolute text-center font-weight-500 text-1.5em transform -translate-y-10">
@@ -179,6 +177,27 @@ const Alarm = () => {
               {minutes}
               <br />
               <span>Minutes</span>
+            </div>
+          </div>
+          {/* Third Circle */}
+          <div className="circle" style={{ "--clr": "#eed971ff" }}>
+            <div
+              className="dots sec_dot"
+              style={{ transform: `rotate(${secDotRotation}deg)` }}
+            ></div>
+            <svg className="w-150 h-150">
+              <circle cx="70" cy="70" r="70"></circle>
+              <circle
+                cx="70"
+                cy="70"
+                r="70"
+                style={{ strokeDashoffset: 440 - (440 * seconds) / 60 }}
+              ></circle>
+            </svg>
+            <div className="absolute text-center font-weight-500 text-1.5em transform -translate-y-10">
+              {seconds}
+              <br />
+              <span>Seconds</span>
             </div>
           </div>
         </div>
