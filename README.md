@@ -30,7 +30,11 @@ The project structure is organized as follows:
 
 ## Getting Started
 
-1. Clone the repository: `git clone https://github.com/AlexandreEadDev/ClockTimerStopWatch.git`
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/AlexandreEadDev/ClockTimerStopWatch.git
+
 2. Navigate to the project directory: `cd clock-alarm-stopwatch-timers-app`
 3. Install dependencies: `npm install`
 4. Run the app: `npm run dev`
