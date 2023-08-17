@@ -57,7 +57,6 @@ const Alarm = () => {
       setHrDotRotation(h * 15);
       setMinDotRotation(m * 6);
       setSecDotRotation(s * 6);
-      setLoading(false);
     }, 500);
 
     return () => clearInterval(interval);
