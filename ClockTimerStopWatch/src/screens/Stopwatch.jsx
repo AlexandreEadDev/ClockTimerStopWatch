@@ -53,13 +53,13 @@ const Stopwatch = () => {
     <div>
       <header>
         <Link to="/">
-          <i className="fa-solid fa-angle-left absolute mt-14 ml-14 hover:scale-125 duration-300 text-3xl text-[#fcda7c]"></i>
+          <i className=" z-20 fa-solid fa-angle-left absolute mt-14 ml-14 hover:scale-125 duration-300 text-3xl text-[#fcda7c]"></i>
         </Link>
       </header>
       <main className=" flex justify-center items-center min-h-screen flex-col ">
         <div
           id="time"
-          className=" duration-700 absolute flex justify-center gap-40 text-white w-full mb-4 "
+          className=" duration-700 absolute flex justify-center gap-2 md:gap-28 text-white w-full mb-4 "
         >
           {/* First Circle */}
           <div className="circle" style={{ "--clr": "#ffa351ff" }}>

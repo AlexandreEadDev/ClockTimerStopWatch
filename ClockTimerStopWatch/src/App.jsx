@@ -4,22 +4,23 @@ import ClockAnim from "./assets/clockAnim.gif";
 
 function App() {
   return (
-    <div className="overflow-hidden flex flex-col items-center h-screen">
-      <div className=" flex mt-40 items-end justify-center text-8xl text-[#ffa351ff]">
-        <Link className=" font-bright hover:scale-110 duration-300" to="/clock">
+    <div className="flex flex-col items-center min-h-screen">
+      <div className="flex mt-10 md:mt-20 items-center flex-col text-4xl md:text-8xl text-[#ffa351ff]">
+        <Link className="font-bright hover:scale-110 duration-300" to="/clock">
           Clock
         </Link>
       </div>
       <img
-        className=" mt-12 flex justify-center max-w-[250px]"
+        className="mt-6 md:mt-12 flex justify-center max-w-[200px] md:max-w-[250px]"
         src={ClockAnim}
+        alt="Clock Animation"
       />
-      <nav className=" flex mt-20 justify-center w-screen">
-        <ul className=" font-bright text-5xl flex space-x-60 text-[#fcda7c] font-bold">
-          <li className=" hover:scale-110 duration-300">
+      <nav className="flex mt-10 md:mt-20 justify-center w-screen ">
+        <ul className="font-bright gap-20 text-3xl md:text-5xl flex flex-col items-center md:flex-row space-y-4 md:space-y-0 md:space-x-20 text-[#fcda7c] font-bold">
+          <li className="hover:scale-110 duration-300">
             <Link to="/alarm">Alarm</Link>
           </li>
-          <li className=" translate-x-[-1rem] mt-20 hover:scale-110 duration-300">
+          <li className="hover:scale-110 duration-300 md:translate-y-20">
             <Link to="/stopwatch">Stopwatch</Link>
           </li>
           <li className="hover:scale-110 duration-300">

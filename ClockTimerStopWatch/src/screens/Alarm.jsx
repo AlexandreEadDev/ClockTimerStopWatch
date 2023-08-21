@@ -76,16 +76,23 @@ const Alarm = () => {
     };
   }, [alarmTime, hours, minutes]);
 
+  useEffect(() => {
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, []);
+
   return (
     <div>
       <header>
         <Link to="/">
-          <i className="fa-solid fa-angle-left absolute mt-14 ml-14 hover:scale-125 duration-300 text-3xl text-[#fcda7c]"></i>
+          <i className=" z-10 fa-solid fa-angle-left absolute mt-14 ml-14 hover:scale-125 duration-300 text-3xl text-[#fcda7c]"></i>
         </Link>
       </header>
 
       <main className=" flex justify-center items-center min-h-screen flex-col ">
-        <div className=" absolute flex gap-20">
+        <div className=" absolute flex gap-2 md:gap-16">
           <select
             value={selectedHour}
             onChange={(e) => setSelectedHour(e.target.value)}
@@ -123,16 +130,18 @@ const Alarm = () => {
               onClick={setAlarm}
               className={`fa ${
                 isAlarmSet ? "fa-times" : "fa-check"
-              } cursor-pointer fixed mt-32 ml-80 z-50 text-3xl hover:scale-x-110 duration-200 text-[#fcda7c]`}
+              } cursor-pointer fixed mt-32 ml-0 md:ml-80 z-50 text-3xl hover:scale-x-110 duration-200 text-[#fcda7c]`}
             ></i>
           </div>
         </div>
 
         <div
           id="time"
-          className={`duration-700 absolute flex justify-center gap-40 text-white w-full mb-4 
+          className={` duration-700 absolute flex justify-center gap-2 md:gap-28 text-white w-full mb-4 
                 transform ${
-                  isAlarmSet ? "-translate-y-40" : "translate-y-[40rem]"
+                  isAlarmSet
+                    ? "-translate-y-20 md:-translate-y-36"
+                    : "translate-y-[40rem]"
                 }
                 ${isAlarmSet ? "opacity-100" : "opacity-0"}`}
         >

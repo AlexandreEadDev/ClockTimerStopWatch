@@ -40,7 +40,7 @@ function Timers() {
     clearInterval(intervalId);
     setIsRunning(false);
     ringtone.pause();
-    ringtone.currentTime = 0; // Reset the alarm audio
+    ringtone.currentTime = 0;
   };
 
   useEffect(() => {
@@ -54,7 +54,7 @@ function Timers() {
 
   const handlePlayPause = () => {
     if (isRunning) {
-      stopTimerAndAlarm(); // Stop the alarm if running
+      stopTimerAndAlarm();
       clearInterval(intervalId);
     } else {
       setIsRunning(true);
@@ -104,7 +104,7 @@ function Timers() {
       <main className=" flex justify-center items-center min-h-screen flex-col gap-12">
         <div
           id="time"
-          className=" -translate-y-20 absolute flex gap-20 text-white"
+          className=" -translate-y-20 absolute flex gap-2 md:gap-28 text-white"
         >
           {/* First Circle */}
           <div className="circle" style={{ "--clr": "#ffa351ff" }}>
@@ -171,7 +171,7 @@ function Timers() {
           </div>
         </div>
 
-        <div className=" gap-4 input-time-wrapper mt-60 flex flex-col    justify-center w-52 text-gray-300">
+        <div className=" gap-4 input-time-wrapper mt-60 flex flex-col justify-center w-52 text-gray-300">
           <input
             ref={inputTimeRef}
             className={` text-[#ffa351ff] flex items-center justify-center text-3xl bg-[#201e20] p-1 rounded-md duration-700 outline-none ${

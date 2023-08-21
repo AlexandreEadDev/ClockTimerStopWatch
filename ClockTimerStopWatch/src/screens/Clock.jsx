@@ -37,7 +37,10 @@ function Clock() {
     <div>
       <header className="flex justify-start w-full transform -translate-x-70">
         <Link to="/">
-          <i className="fa-solid fa-angle-left absolute mt-14 ml-14 hover:scale-125 duration-300 text-3xl text-[#fcda7c]"></i>
+          <i
+            className=" z-10 fa-solid fa-angle-left absolute mt-8 md:mt-14 ml-6 md:ml-14 hover:scale-125 
+          duration-300 text-xl md:text-3xl text-[#fcda7c]"
+          ></i>
         </Link>
       </header>
       <main className="flex justify-center items-center min-h-screen">
@@ -46,7 +49,7 @@ function Clock() {
         ) : (
           <div
             id="time"
-            className="flex justify-center gap-40 text-white w-full mb-4"
+            className="flex flex-col md:flex-row justify-center gap-4 md:gap-28 items-center md:items-start text-white w-full mb-4"
           >
             {/* First Circle */}
             <div className="circle" style={{ "--clr": "#ffa351ff" }}>
@@ -112,7 +115,7 @@ function Clock() {
               </div>
             </div>
             {/* AM/PM */}
-            <div className="ap">
+            <div className=" ap mt-4 md:mt-0">
               <div className="font-size-1em transform -translate-x-20">
                 {ampm}
               </div>
