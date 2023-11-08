@@ -171,7 +171,7 @@ function Timers() {
           </div>
         </div>
 
-        <div className=" gap-4 input-time-wrapper mt-60 flex flex-col justify-center w-52 text-gray-300">
+        <div className=" gap-4 input-time-wrapper mt-60 flex flex-col items-center justify-center w-52 text-gray-300">
           <input
             ref={inputTimeRef}
             className={` text-[#ffa351ff] flex items-center justify-center text-3xl bg-[#201e20] p-1 rounded-md duration-700 outline-none md:translate-y-0 translate-y-32 ${
