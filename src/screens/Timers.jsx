@@ -194,9 +194,9 @@ function Timers() {
             }}
           />
         </div>
-        <div className="controls text-white text-2xl flex gap-20">
+        <div className="controls text-white text-2xl flex gap-20 md:translate-y-0 translate-y-32">
           <div
-            className={`timer-btn timer-btn-control timer-btn-start cursor-pointer md:translate-y-0 translate-y-32${
+            className={`timer-btn timer-btn-control timer-btn-start cursor-pointer${
               isRunning ? "running" : ""
             }`}
             onClick={handlePlayPause}
@@ -206,10 +206,7 @@ function Timers() {
               id="start"
             ></i>
           </div>
-          <div
-            className="timer-btn timer-btn-reset md:translate-y-0 translate-y-32"
-            onClick={handleReset}
-          >
+          <div className="timer-btn timer-btn-reset " onClick={handleReset}>
             <i className=" fa fa-times" id="reset"></i>
           </div>
         </div>
