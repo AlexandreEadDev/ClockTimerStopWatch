@@ -56,10 +56,10 @@ const Stopwatch = () => {
           <i className=" z-20 fa-solid fa-angle-left absolute mt-14 ml-14 hover:scale-125 duration-300 text-3xl text-[#fcda7c]"></i>
         </Link>
       </header>
-      <main className=" flex justify-center items-center min-h-screen flex-col ">
+      <main className=" flex justify-center items-center h-screen min-h-[650px] flex-col ">
         <div
           id="time"
-          className=" duration-700 absolute flex justify-center gap-2 md:gap-28 text-white w-full mb-4 "
+          className=" duration-700 absolute flex md:flex-row md:mt-0 mt-20 flex-col items-center justify-center gap-2 md:gap-28 text-white w-full mb-4 "
         >
           {/* First Circle */}
           <div className="circle" style={{ "--clr": "#ffa351ff" }}>
@@ -127,14 +127,23 @@ const Stopwatch = () => {
         </div>
 
         {/* Controls */}
-        <div className="controls absolute mt-96 flex justify-center gap-20 text-white w-full mb-4 text-xl ">
-          <div onClick={start} className=" cursor-pointer">
+        <div className="controls absolute mt-96 flex justify-evenly text-white w-full mb-4 text-xl ">
+          <div
+            onClick={start}
+            className=" md:translate-y-0 translate-y-24 cursor-pointer"
+          >
             Start
           </div>
-          <div onClick={stop} className=" cursor-pointer">
+          <div
+            onClick={stop}
+            className=" md:translate-y-0 translate-y-24 cursor-pointer"
+          >
             Stop
           </div>
-          <div onClick={reset} className=" cursor-pointer">
+          <div
+            onClick={reset}
+            className=" md:translate-y-0 translate-y-24 cursor-pointer"
+          >
             Reset
           </div>
         </div>

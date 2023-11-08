@@ -101,10 +101,10 @@ function Timers() {
           <i className="fa-solid fa-angle-left absolute mt-14 ml-14 hover:scale-125 duration-300 text-3xl text-[#fcda7c]"></i>
         </Link>
       </header>
-      <main className=" flex justify-center items-center min-h-screen flex-col gap-12">
+      <main className=" flex justify-center items-center h-screen min-h-[650px] flex-col gap-12">
         <div
           id="time"
-          className=" -translate-y-20 absolute flex gap-2 md:gap-28 text-white"
+          className=" -translate-y-20 absolute flex md:flex-row md:mt-0 mt-20 flex-col items-center gap-2 md:gap-28 text-white"
         >
           {/* First Circle */}
           <div className="circle" style={{ "--clr": "#ffa351ff" }}>
@@ -174,7 +174,7 @@ function Timers() {
         <div className=" gap-4 input-time-wrapper mt-60 flex flex-col justify-center w-52 text-gray-300">
           <input
             ref={inputTimeRef}
-            className={` text-[#ffa351ff] flex items-center justify-center text-3xl bg-[#201e20] p-1 rounded-md duration-700 outline-none ${
+            className={` text-[#ffa351ff] flex items-center justify-center text-3xl bg-[#201e20] p-1 rounded-md duration-700 outline-none md:translate-y-0 translate-y-32 ${
               isRunning ? " opacity-50 pointer-events-none" : " cursor-pointer"
             }`}
             type="time"
@@ -196,7 +196,7 @@ function Timers() {
         </div>
         <div className="controls text-white text-2xl flex gap-20">
           <div
-            className={`timer-btn timer-btn-control timer-btn-start cursor-pointer ${
+            className={`timer-btn timer-btn-control timer-btn-start cursor-pointer md:translate-y-0 translate-y-32${
               isRunning ? "running" : ""
             }`}
             onClick={handlePlayPause}
@@ -206,8 +206,11 @@ function Timers() {
               id="start"
             ></i>
           </div>
-          <div className="timer-btn timer-btn-reset" onClick={handleReset}>
-            <i className="fa fa-times" id="reset"></i>
+          <div
+            className="timer-btn timer-btn-reset md:translate-y-0 translate-y-32"
+            onClick={handleReset}
+          >
+            <i className=" fa fa-times" id="reset"></i>
           </div>
         </div>
       </main>

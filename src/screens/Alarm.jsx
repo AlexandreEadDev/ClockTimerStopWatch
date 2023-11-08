@@ -91,21 +91,21 @@ const Alarm = () => {
         </Link>
       </header>
 
-      <main className=" flex justify-center items-center min-h-screen flex-col ">
+      <main className=" flex justify-center items-center h-screen min-h-[650px] flex-col ">
         <div className=" absolute flex gap-2 md:gap-16">
           <select
             value={selectedHour}
             onChange={(e) => setSelectedHour(e.target.value)}
             className={`text-center w-28 font-medium text-5xl text-[#ffa351ff]
             focus:outline-none appearance-none outline-none border-none cursor-pointer hover:scale-105 
-           duration-700 scrollbar-hide bg-[#201e20] ${
+           duration-700 scrollbar-hide bg-[#201e20]  md:translate-y-0 translate-y-60 ${
              isAlarmSet ? "pointer-events-none translate-y-14" : " "
            }`}
           >
             {hoursOptions}
           </select>
           <span
-            className={`text-4xl text-white duration-700 ${
+            className={`text-4xl text-white duration-700  md:translate-y-0 translate-y-60 ${
               isAlarmSet ? "translate-y-14" : " "
             }`}
           >
@@ -116,7 +116,7 @@ const Alarm = () => {
             onChange={(e) => setSelectedMinute(e.target.value)}
             className={`text-center w-28 font-medium text-5xl text-[#ffa351ff]
             focus:outline-none appearance-none outline-none border-none cursor-pointer hover:scale-105 
-           duration-700 scrollbar-hide bg-[#201e20] ${
+           duration-700 scrollbar-hide bg-[#201e20] md:translate-y-0 translate-y-60 ${
              isAlarmSet ? "pointer-events-none translate-y-14" : " "
            }`}
           >
@@ -130,14 +130,14 @@ const Alarm = () => {
               onClick={setAlarm}
               className={`fa ${
                 isAlarmSet ? "fa-times" : "fa-check"
-              } cursor-pointer fixed mt-32 ml-0 md:ml-80 z-50 text-3xl hover:scale-x-110 duration-200 text-[#fcda7c]`}
+              } cursor-pointer fixed mt-32 -ml-2 md:ml-80 md:translate-y-0 translate-y-40 z-50 text-3xl hover:scale-x-110 duration-200 text-[#fcda7c]`}
             ></i>
           </div>
         </div>
 
         <div
           id="time"
-          className={` duration-700 absolute flex justify-center gap-2 md:gap-28 text-white w-full mb-4 
+          className={` duration-700 absolute flex md:flex-row md:mt-0 mt-20 flex-col items-center justify-center gap-2 md:gap-28 text-white w-full mb-4 
                 transform ${
                   isAlarmSet
                     ? "-translate-y-20 md:-translate-y-36"
