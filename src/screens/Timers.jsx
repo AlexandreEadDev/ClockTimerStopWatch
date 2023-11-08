@@ -104,7 +104,7 @@ function Timers() {
       <main className=" flex justify-center items-center h-screen min-h-[650px] flex-col gap-12">
         <div
           id="time"
-          className=" -translate-y-20 absolute flex md:flex-row md:mt-0 mt-20 flex-col items-center gap-2 md:gap-28 text-white"
+          className=" -translate-y-20 absolute flex md:flex-row md:mt-0 mt-10 flex-col items-center gap-2 md:gap-28 text-white"
         >
           {/* First Circle */}
           <div className="circle" style={{ "--clr": "#ffa351ff" }}>

@@ -59,7 +59,7 @@ const Stopwatch = () => {
       <main className=" flex justify-center items-center h-screen min-h-[650px] flex-col ">
         <div
           id="time"
-          className=" duration-700 absolute flex md:flex-row md:mt-0 mt-20 flex-col items-center justify-center gap-2 md:gap-28 text-white w-full mb-4 "
+          className=" duration-700 absolute flex md:flex-row md:mt-0 mt-10 flex-col items-center justify-center gap-2 md:gap-28 text-white w-full mb-4 "
         >
           {/* First Circle */}
           <div className="circle" style={{ "--clr": "#ffa351ff" }}>
